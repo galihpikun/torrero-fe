@@ -48,6 +48,17 @@ export function DialogAdd() {
     status: "todo",
   });
 
+  function resetForm() {
+  setFormData({
+    title: "",
+    description: "",
+    priority: "",
+    deadline: undefined,
+    status: "todo",
+  });
+  setDate(undefined);
+}
+
   function handleInputChanges({ name, value }) {
     setFormData((prevData) => ({
       ...prevData,
@@ -72,6 +83,7 @@ export function DialogAdd() {
       if (response.ok) {
         console.log(response);
         toast.success("Berhasil Menambahkan Task!" ,{position:'top-center'})
+        resetForm();
         router.refresh();
       }
     } catch (error) {
