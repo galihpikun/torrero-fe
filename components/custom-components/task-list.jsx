@@ -19,11 +19,11 @@ import {
 } from "@/components/ui/dropdown-menu";
 import DeleteTask from "./delete-task";
 
-export default async function TaskList() {
+export default async function TaskList({project}) {
   // Fetching data
   // json biar ngubah jadi json object, ngedestructure.
   async function getTasks() {
-    const res = await fetch(`${API_URL}/task`, {
+    const res = await fetch(`${API_URL}/task/get-all/${project}`, {
       cache: "no-store",
     });
 
@@ -39,7 +39,7 @@ export default async function TaskList() {
   const doneTasks = tasks.filter((task) => task.status === "done");
 
   return (
-    <section className="h-full flex justify-around items-start flex-wrap p-8 w-screen">
+    <section className="h-full flex justify-around items-start flex-wrap p-8 w-screen gap-10">
       <div className="w-80 flex flex-col gap-5">
         <div className="flex gap-2 items-center bg-white rounded-xl shadow-md py-2 w-full px-3">
           <LayoutList size={20} />

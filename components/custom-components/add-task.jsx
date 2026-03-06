@@ -14,7 +14,7 @@ import {
 import { Field, FieldGroup } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { UserPlus } from "lucide-react";
+import { Plus } from "lucide-react";
 import {
   Select,
   SelectContent,
@@ -36,7 +36,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { API_URL } from "@/lib/api";
 
-export function DialogAdd() {
+export function DialogAdd({projectId}) {
   const [date, setDate] = useState();
   const router = useRouter();
 
@@ -46,6 +46,7 @@ export function DialogAdd() {
     priority: "",
     deadline: date,
     status: "todo",
+    project_id: parseInt(projectId)
   });
 
   function resetForm() {
@@ -55,6 +56,7 @@ export function DialogAdd() {
     priority: "",
     deadline: undefined,
     status: "todo",
+    project_id:null
   });
   setDate(undefined);
 }
@@ -98,7 +100,7 @@ export function DialogAdd() {
       <form>
         <DialogTrigger asChild>
           <Button>
-            <UserPlus /> Add User
+           <Plus></Plus> Add Task
           </Button>
         </DialogTrigger>
         <DialogContent className="sm:max-w-sm">
