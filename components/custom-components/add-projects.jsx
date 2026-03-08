@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/popover";
 
 export function DialogAddProjects() {
-  const [date, setDate] = useState();
+
   const router = useRouter();
 
   const [formData, setFormData] = useState({
@@ -91,7 +91,7 @@ export function DialogAddProjects() {
             />
           </Field>
         
-        <Button type="submit" onClick={handleSubmit}>
+        <Button type="submit" onClick={handleSubmit} className="bg-blue-500" >
           Add Project
         </Button>
         </FieldGroup>

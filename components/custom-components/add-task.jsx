@@ -99,7 +99,7 @@ export function DialogAdd({projectId}) {
     <Dialog>
       <form>
         <DialogTrigger asChild>
-          <Button>
+          <Button className="bg-blue-500">
            <Plus></Plus> Add Task
           </Button>
         </DialogTrigger>

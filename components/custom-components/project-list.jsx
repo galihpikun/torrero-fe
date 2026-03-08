@@ -67,7 +67,7 @@ export default async function ProjectList() {
               <EmptyProjects></EmptyProjects>
             </div>
           ) : (
-            <div className="flex items-center gap-5 flex-wrap px-10">
+            <div className="flex items-center gap-5 flex-wrap px-10 pt-5">
               {projects.map((project) => (
                 <Link
                   className="flex flex-col w-65 h-60 rounded-lg shadow-lg overflow-hidden hover:scale-105 transition-all duration-300"
